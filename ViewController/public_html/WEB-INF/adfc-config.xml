@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Search">
+    <page>/Search.jspx</page>
+  </view>
+  <view id="Create">
+    <page>/Create.jspx</page>
+  </view>
+  <view id="Edit">
+    <page>/Edit.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>Search</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>create</from-outcome>
+      <to-activity-id>Create</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>edit</from-outcome>
+      <to-activity-id>Edit</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>Create</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>Search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>Edit</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>submit</from-outcome>
+      <to-activity-id>Search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__8">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>caccount</from-outcome>
+      <to-activity-id>Search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
