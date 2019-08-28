@@ -25,13 +25,16 @@
   </Attribute>
   <Attribute
     Name="UserEmployeeId"
-    IsNotNull="true"
     ColumnName="USER_EMPLOYEE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="USER_ACCOUNTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="FirstName"
     IsNotNull="true"
@@ -99,44 +102,73 @@
     TableName="USER_ACCOUNTS"/>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="1000"
     ColumnName="CREATED_BY"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USER_ACCOUNTS">
+    TableName="USER_ACCOUNTS"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USER_ACCOUNTS"/>
+    TableName="USER_ACCOUNTS"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ModifiedDate"
-    IsNotNull="true"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USER_ACCOUNTS"/>
+    TableName="USER_ACCOUNTS"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ObjectVersion"
     Precision="4000"
     ColumnName="OBJECT_VERSION"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
-    TableName="USER_ACCOUNTS">
+    TableName="USER_ACCOUNTS"
+    HistoryColumn="VersionHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="SalesTeamOppurtunityEO"

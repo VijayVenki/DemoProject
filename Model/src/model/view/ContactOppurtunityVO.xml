@@ -13,6 +13,27 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="OpportunitiesVO1"
+    ViewObjectName="model.view.OpportunitiesVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OppId"
+    ListVOName="OpportunitiesVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OppId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OppName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ContactOppurtunityEO"
     Entity="model.entities.ContactOppurtunityEO"/>
@@ -22,13 +43,16 @@
     PrecisionRule="true"
     EntityAttrName="OppId"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="OPP_ID">
+    AliasName="OPP_ID"
+    LOVName="LOV_OppId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.ContactOppurtunityVO.OppId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -54,7 +78,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -70,7 +95,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -86,7 +112,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -101,7 +128,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -116,7 +144,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -126,6 +155,11 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="OpportunitiesVO"
+    ViewLink="model.entities.COpp_Opp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

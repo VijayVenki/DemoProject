@@ -45,44 +45,53 @@
     TableName="USER_ROLES"/>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="1000"
     ColumnName="CREATED_BY"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USER_ROLES">
+    TableName="USER_ROLES"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USER_ROLES"/>
+    TableName="USER_ROLES"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="ModifiedDate"
-    IsNotNull="true"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USER_ROLES"/>
+    TableName="USER_ROLES"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="ObjectVersion"
     Precision="4000"
     ColumnName="OBJECT_VERSION"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="VARCHAR2"
-    TableName="USER_ROLES">
+    TableName="USER_ROLES"
+    HistoryColumn="VersionHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastModifiedBy"
@@ -91,7 +100,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USER_ROLES">
+    TableName="USER_ROLES"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>

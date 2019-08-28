@@ -12,12 +12,23 @@
   BindingStyle="OracleName">
   <Attribute
     Name="RevenueId"
-    IsNotNull="true"
     ColumnName="REVENUE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
-    TableName="REVENUE_ITEMS"/>
+    TableName="REVENUE_ITEMS"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Quantity"
     ColumnName="QUANTITY"
@@ -82,7 +93,7 @@
     Precision="4000"
     ColumnName="PRODUCT_ID"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="VARCHAR2"
     TableName="REVENUE_ITEMS"
     PrimaryKey="true">
@@ -92,44 +103,73 @@
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="1000"
     ColumnName="CREATED_BY"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="REVENUE_ITEMS">
+    TableName="REVENUE_ITEMS"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="REVENUE_ITEMS"/>
+    TableName="REVENUE_ITEMS"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ModifiedDate"
-    IsNotNull="true"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="REVENUE_ITEMS"/>
+    TableName="REVENUE_ITEMS"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ObjectVersion"
     Precision="4000"
     ColumnName="OBJECT_VERSION"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
-    TableName="REVENUE_ITEMS">
+    TableName="REVENUE_ITEMS"
+    HistoryColumn="VersionHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ProductCategoryId"
@@ -146,10 +186,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="REVENUE_ITEMS">
+    TableName="REVENUE_ITEMS"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="ProductCatalogEO"
@@ -173,6 +220,7 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.entities.RevenueItemsEO.ProductId"/>
+      <Item Value="model.entities.RevenueItemsEO.RevenueId"/>
     </AttrArray>
   </Key>
   <Key

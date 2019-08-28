@@ -38,7 +38,8 @@
     PrecisionRule="true"
     EntityAttrName="AppId"
     EntityUsage="AppointmentEO"
-    AliasName="APP_ID">
+    AliasName="APP_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -241,18 +242,18 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
+    Name="ContactsVO"
+    ViewLink="model.entities.APP_CON"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
     Name="CustomerAccountVO"
-    ViewLink="model.entities.APP_ACC"
+    ViewLink="model.entities.App_Acc"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="OpportunitiesVO"
-    ViewLink="model.entities.APP_OPP"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="ContactsVO"
-    ViewLink="model.entities.APP_CON"
+    ViewLink="model.entities.APP_Opp"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

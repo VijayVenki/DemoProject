@@ -12,21 +12,27 @@
   BindingStyle="OracleName">
   <Attribute
     Name="NoteId"
-    IsNotNull="true"
     ColumnName="NOTE_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="CONTACT_NOTE"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ContactId"
-    IsNotNull="true"
     ColumnName="CONTACT_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CONTACT_NOTE"/>
+    TableName="CONTACT_NOTE"
+    IsNotNull="true"/>
   <Attribute
     Name="Note"
     IsQueriable="false"
@@ -37,44 +43,73 @@
     TableName="CONTACT_NOTE"/>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="1000"
     ColumnName="CREATED_BY"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CONTACT_NOTE">
+    TableName="CONTACT_NOTE"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="CONTACT_NOTE"/>
+    TableName="CONTACT_NOTE"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ModifiedDate"
-    IsNotNull="true"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="CONTACT_NOTE"/>
+    TableName="CONTACT_NOTE"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ObjectVersion"
     Precision="4000"
     ColumnName="OBJECT_VERSION"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
-    TableName="CONTACT_NOTE">
+    TableName="CONTACT_NOTE"
+    HistoryColumn="VersionHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Date"
@@ -91,10 +126,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CONTACT_NOTE">
+    TableName="CONTACT_NOTE"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="ContactsEO"
@@ -111,6 +153,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.entities.ContactNoteEO.NoteId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContactNoteContactIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CONTACT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTACT_NOTE_CONTACT_ID_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.ContactNoteEO.ContactId"/>
     </AttrArray>
   </Key>
   <Key

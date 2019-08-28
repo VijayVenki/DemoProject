@@ -13,6 +13,27 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="UserAccountsVO1"
+    ViewObjectName="model.view.UserAccountsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AssigneeId"
+    ListVOName="UserAccountsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssigneeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserEmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TasksEO"
     Entity="model.entities.TasksEO"/>
@@ -22,7 +43,8 @@
     PrecisionRule="true"
     EntityAttrName="TaskId"
     EntityUsage="TasksEO"
-    AliasName="TASK_ID">
+    AliasName="TASK_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -95,13 +117,16 @@
     Name="AssigneeId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="AssigneeId"
+    EntityAttrName="Assignee"
     EntityUsage="TasksEO"
-    AliasName="ASSIGNEE_ID">
+    AliasName="ASSIGNEE_ID"
+    LOVName="LOV_AssigneeId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -127,7 +152,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="TasksEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -143,7 +169,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TasksEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -159,7 +186,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="TasksEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -174,7 +202,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="TasksEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -189,7 +218,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="TasksEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -211,6 +241,8 @@
           ResId="model.view.TasksVO.AccountId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -226,6 +258,8 @@
           ResId="model.view.TasksVO.OppurtunityId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -241,6 +275,8 @@
           ResId="model.view.TasksVO.ContactId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -267,6 +303,11 @@
   <ViewLinkAccessor
     Name="ContactsVO"
     ViewLink="model.entities.Task_Contact"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserAccountsVO"
+    ViewLink="model.entities.Task_UserAcc"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

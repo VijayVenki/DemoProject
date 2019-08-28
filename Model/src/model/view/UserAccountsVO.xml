@@ -38,7 +38,8 @@
     PrecisionRule="true"
     EntityAttrName="UserEmployeeId"
     EntityUsage="UserAccounts"
-    AliasName="USER_EMPLOYEE_ID">
+    AliasName="USER_EMPLOYEE_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -145,7 +146,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="UserAccounts"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -161,7 +163,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="UserAccounts"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -177,7 +180,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="UserAccounts"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -192,7 +196,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="UserAccounts"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -226,6 +231,12 @@
     Name="UserTaskInterestedVO"
     ViewLink="model.view.UserinvUserAccountsFkLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TasksVO"
+    ViewLink="model.entities.Task_UserAcc"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

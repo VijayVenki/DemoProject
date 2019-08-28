@@ -13,6 +13,27 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="ContactsVO1"
+    ViewObjectName="model.view.ContactsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ContactId"
+    ListVOName="ContactsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContactName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ContactInteractionEO"
     Entity="model.entities.ContactInteractionEO"/>
@@ -22,7 +43,8 @@
     PrecisionRule="true"
     EntityAttrName="InteractionId"
     EntityUsage="ContactInteractionEO"
-    AliasName="INTERACTION_ID">
+    AliasName="INTERACTION_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -38,13 +60,16 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactInteractionEO"
-    AliasName="CONTACT_ID">
+    AliasName="CONTACT_ID"
+    LOVName="LOV_ContactId">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="model.view.ContactInteractionVO.ContactId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <LABEL
+          ResId="model.view.ContactInteractionVO.ContactId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

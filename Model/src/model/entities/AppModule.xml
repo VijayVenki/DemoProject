@@ -50,9 +50,6 @@
     Name="ContactInteractionEOView3"
     ViewObjectName="model.view.ContactInteractionVO"/>
   <ViewUsage
-    Name="ContactsVO3"
-    ViewObjectName="model.view.ContactsVO"/>
-  <ViewUsage
     Name="ContactOppurtunityVO3"
     ViewObjectName="model.view.ContactOppurtunityVO"/>
   <ViewUsage
@@ -107,9 +104,6 @@
     Name="OpportunitiesVO4"
     ViewObjectName="model.view.OpportunitiesVO"/>
   <ViewUsage
-    Name="AppointmentVO3"
-    ViewObjectName="model.view.AppointmentVO"/>
-  <ViewUsage
     Name="TasksVO2"
     ViewObjectName="model.view.TasksVO"/>
   <ViewUsage
@@ -137,17 +131,35 @@
     Name="ContactsVO4"
     ViewObjectName="model.view.ContactsVO"/>
   <ViewUsage
-    Name="CustomerAccountVO2"
-    ViewObjectName="model.view.CustomerAccountVO"/>
-  <ViewUsage
-    Name="OpportunitiesVO2"
-    ViewObjectName="model.view.OpportunitiesVO"/>
-  <ViewUsage
     Name="UserInviteesVO1"
     ViewObjectName="model.view.UserInviteesVO"/>
   <ViewUsage
     Name="ContactInviteesVO1"
     ViewObjectName="model.view.ContactInviteesVO"/>
+  <ViewUsage
+    Name="CustomerAccountVO2"
+    ViewObjectName="model.view.CustomerAccountVO"/>
+  <ViewUsage
+    Name="AppointmentVO3"
+    ViewObjectName="model.view.AppointmentVO"/>
+  <ViewUsage
+    Name="OpportunitiesVO2"
+    ViewObjectName="model.view.OpportunitiesVO"/>
+  <ViewUsage
+    Name="AppointmentVO4"
+    ViewObjectName="model.view.AppointmentVO"/>
+  <ViewUsage
+    Name="InteractionVO3"
+    ViewObjectName="model.view.InteractionVO"/>
+  <ViewUsage
+    Name="TasksVO4"
+    ViewObjectName="model.view.TasksVO"/>
+  <ViewUsage
+    Name="OpportunitiesVO5"
+    ViewObjectName="model.view.OpportunitiesVO"/>
+  <ViewUsage
+    Name="ContactOppurtunityVO1"
+    ViewObjectName="model.view.ContactOppurtunityVO"/>
   <ViewLinkUsage
     Name="ContactsCustomerAccountFkLink1"
     ViewLinkObjectName="model.view.ContactsCustomerAccountFkLink"
@@ -165,12 +177,6 @@
     ViewLinkObjectName="model.view.ContactinvinteractionFkLink"
     SrcViewUsageName="model.entities.AppModule.InteractionVO1"
     DstViewUsageName="model.entities.AppModule.ContactInteractionEOView3"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="ContactsOpportunitiesFkLink1"
-    ViewLinkObjectName="model.view.ContactsOpportunitiesFkLink"
-    SrcViewUsageName="model.entities.AppModule.OpportunitiesVO1"
-    DstViewUsageName="model.entities.AppModule.ContactsVO3"
     Reversed="false"/>
   <ViewLinkUsage
     Name="ContinvOpportunitiesFkLink1"
@@ -281,12 +287,6 @@
     DstViewUsageName="model.entities.AppModule.OpportunitiesVO4"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="APP_ACC2"
-    ViewLinkObjectName="model.entities.APP_ACC"
-    SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
-    DstViewUsageName="model.entities.AppModule.AppointmentVO3"
-    Reversed="true"/>
-  <ViewLinkUsage
     Name="Task_ACC2"
     ViewLinkObjectName="model.entities.Task_ACC"
     SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
@@ -329,18 +329,6 @@
     DstViewUsageName="model.entities.AppModule.ContactsVO4"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="APP_ACC1"
-    ViewLinkObjectName="model.entities.APP_ACC"
-    SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
-    DstViewUsageName="model.entities.AppModule.CustomerAccountVO2"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="APP_OPP1"
-    ViewLinkObjectName="model.entities.APP_OPP"
-    SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
-    DstViewUsageName="model.entities.AppModule.OpportunitiesVO2"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="InviteesAccAppointmentFkLink1"
     ViewLinkObjectName="model.view.InviteesAccAppointmentFkLink"
     SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
@@ -351,5 +339,47 @@
     ViewLinkObjectName="model.view.Inviteesv1AccAppointmentFkLink"
     SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
     DstViewUsageName="model.entities.AppModule.ContactInviteesVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="App_Acc1"
+    ViewLinkObjectName="model.entities.App_Acc"
+    SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
+    DstViewUsageName="model.entities.AppModule.CustomerAccountVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="App_Acc2"
+    ViewLinkObjectName="model.entities.App_Acc"
+    SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
+    DstViewUsageName="model.entities.AppModule.AppointmentVO3"
+    Reversed="true"/>
+  <ViewLinkUsage
+    Name="APP_Opp1"
+    ViewLinkObjectName="model.entities.APP_Opp"
+    SrcViewUsageName="model.entities.AppModule.AppointmentVO2"
+    DstViewUsageName="model.entities.AppModule.OpportunitiesVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="APP_Opp2"
+    ViewLinkObjectName="model.entities.APP_Opp"
+    SrcViewUsageName="model.entities.AppModule.OpportunitiesVO1"
+    DstViewUsageName="model.entities.AppModule.AppointmentVO4"
+    Reversed="true"/>
+  <ViewLinkUsage
+    Name="Inter_Opp2"
+    ViewLinkObjectName="model.entities.Inter_Opp"
+    SrcViewUsageName="model.entities.AppModule.OpportunitiesVO1"
+    DstViewUsageName="model.entities.AppModule.InteractionVO3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Task_Opp2"
+    ViewLinkObjectName="model.entities.Task_Opp"
+    SrcViewUsageName="model.entities.AppModule.OpportunitiesVO1"
+    DstViewUsageName="model.entities.AppModule.TasksVO4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="COpp_Opp1"
+    ViewLinkObjectName="model.entities.COpp_Opp"
+    SrcViewUsageName="model.entities.AppModule.ContactOppurtunityVO2"
+    DstViewUsageName="model.entities.AppModule.OpportunitiesVO5"
     Reversed="false"/>
 </AppModule>

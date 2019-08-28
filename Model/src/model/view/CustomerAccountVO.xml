@@ -332,14 +332,14 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="AppointmentVO"
-    ViewLink="model.entities.APP_ACC"
+    Name="TasksVO"
+    ViewLink="model.entities.Task_ACC"
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="TasksVO"
-    ViewLink="model.entities.Task_ACC"
+    Name="AppointmentVO"
+    ViewLink="model.entities.App_Acc"
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>

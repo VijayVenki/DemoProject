@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="NoteId"
     EntityUsage="AccountNoteEO"
-    AliasName="NOTE_ID">
+    AliasName="NOTE_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -54,13 +55,16 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="AccountNoteEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.AccountNoteVO.CreatedBy_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <PAYLOADHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -70,7 +74,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="AccountNoteEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -86,7 +91,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="AccountNoteEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -130,13 +136,16 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="AccountNoteEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.AccountNoteVO.LastModifiedBy_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

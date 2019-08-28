@@ -3,13 +3,13 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="APP_OPP"
+  Name="APP_Opp"
   Version="12.2.1.9.14"
   InheritPersonalization="merge">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.entities.APP_OPP_LABEL"/>
+        ResId="model.entities.APP_Opp_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
@@ -23,7 +23,7 @@
       <Attr Name="_finderName" Value="AppointmentVO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.view.AppointmentVO.AppId"/>
+      <Item Value="model.view.AppointmentVO.OppurtunityId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd

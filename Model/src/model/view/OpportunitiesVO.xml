@@ -43,7 +43,8 @@
     PrecisionRule="true"
     EntityAttrName="OppId"
     EntityUsage="OpportunitiesEO"
-    AliasName="OPP_ID">
+    AliasName="OPP_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -245,7 +246,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="OpportunitiesEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -261,7 +263,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="OpportunitiesEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -277,7 +280,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="OpportunitiesEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -292,7 +296,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="OpportunitiesEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -307,7 +312,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="OpportunitiesEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -317,6 +323,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="OppName"
+    PrecisionRule="true"
+    EntityAttrName="OppName"
+    EntityUsage="OpportunitiesEO"
+    AliasName="OPP_NAME"/>
   <ViewLinkAccessor
     Name="ContactsVO"
     ViewLink="model.view.ContactsOpportunitiesFkLink"
@@ -343,12 +355,6 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="AppointmentVO"
-    ViewLink="model.entities.APP_OPP"
-    Type="oracle.jbo.server.ViewRowImpl"
-    Reversed="true"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
     Name="TasksVO"
     ViewLink="model.entities.Task_Opp"
     Type="oracle.jbo.server.ViewRowImpl"
@@ -357,6 +363,17 @@
   <ViewLinkAccessor
     Name="InteractionVO"
     ViewLink="model.entities.Inter_Opp"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentVO"
+    ViewLink="model.entities.APP_Opp"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ContactOppurtunityVO1"
+    ViewLink="model.entities.COpp_Opp"
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
