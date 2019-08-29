@@ -13,6 +13,45 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="TasksVO1"
+    ViewObjectName="model.view.TasksVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ContactsVO1"
+    ViewObjectName="model.view.ContactsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TaskId"
+    ListVOName="TasksVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaskId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaskId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TaskName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContactId"
+    ListVOName="ContactsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ContactTaskInviteesEO"
     Entity="model.entities.ContactTaskInviteesEO"/>
@@ -22,13 +61,16 @@
     PrecisionRule="true"
     EntityAttrName="TaskId"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="TASK_ID">
+    AliasName="TASK_ID"
+    LOVName="LOV_TaskId">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="model.view.ContactTaskInviteesVO.TaskId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="model.view.ContactTaskInviteesVO.TaskId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -38,13 +80,16 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="CONTACT_ID">
+    AliasName="CONTACT_ID"
+    LOVName="LOV_ContactId">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="model.view.ContactTaskInviteesVO.ContactId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <LABEL
+          ResId="model.view.ContactTaskInviteesVO.ContactId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -54,7 +99,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -70,7 +116,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -86,7 +133,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -101,7 +149,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -116,7 +165,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="ContactTaskInviteesEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

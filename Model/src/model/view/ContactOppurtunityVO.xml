@@ -17,6 +17,14 @@
     Name="OpportunitiesVO1"
     ViewObjectName="model.view.OpportunitiesVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OpportunitiesVO2"
+    ViewObjectName="model.view.OpportunitiesVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ContactsVO1"
+    ViewObjectName="model.view.ContactsVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_OppId"
     ListVOName="OpportunitiesVO1"
@@ -31,6 +39,23 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="OppName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContactId"
+    ListVOName="ContactsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContactName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -62,13 +87,16 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactOppurtunityEO"
-    AliasName="CONTACT_ID">
+    AliasName="CONTACT_ID"
+    LOVName="LOV_ContactId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.ContactOppurtunityVO.ContactId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -160,6 +160,9 @@
   <ViewUsage
     Name="ContactOppurtunityVO1"
     ViewObjectName="model.view.ContactOppurtunityVO"/>
+  <ViewUsage
+    Name="OpportunitiesVO6"
+    ViewObjectName="model.view.OpportunitiesVO"/>
   <ViewLinkUsage
     Name="ContactsCustomerAccountFkLink1"
     ViewLinkObjectName="model.view.ContactsCustomerAccountFkLink"
@@ -381,5 +384,11 @@
     ViewLinkObjectName="model.entities.COpp_Opp"
     SrcViewUsageName="model.entities.AppModule.ContactOppurtunityVO2"
     DstViewUsageName="model.entities.AppModule.OpportunitiesVO5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ACC_OPP1"
+    ViewLinkObjectName="model.entities.ACC_OPP"
+    SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
+    DstViewUsageName="model.entities.AppModule.OpportunitiesVO6"
     Reversed="false"/>
 </AppModule>

@@ -47,7 +47,6 @@
     TableName="OPPORTUNITIES"/>
   <Attribute
     Name="PrimaryContact"
-    IsNotNull="true"
     Precision="100"
     ColumnName="PRIMARY_CONTACT"
     SQLType="VARCHAR"

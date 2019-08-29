@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="TasksVO1"
+    ViewObjectName="model.view.TasksVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UserTaskInterestedVO1"
+    ViewObjectName="model.view.UserTaskInterestedVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UserAccountsVO1"
+    ViewObjectName="model.view.UserAccountsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TaskId"
+    ListVOName="TasksVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaskId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaskId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TaskName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UserId"
+    ListVOName="UserAccountsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserEmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="UserTaskInterestedEO"
     Entity="model.entities.UserTaskInterestedEO"/>
@@ -22,13 +68,16 @@
     PrecisionRule="true"
     EntityAttrName="TaskId"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="TASK_ID">
+    AliasName="TASK_ID"
+    LOVName="LOV_TaskId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.UserTaskInterestedVO.TaskId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -38,13 +87,16 @@
     PrecisionRule="true"
     EntityAttrName="UserId"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="USER_ID">
+    AliasName="USER_ID"
+    LOVName="LOV_UserId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.UserTaskInterestedVO.UserId_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -54,7 +106,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -70,7 +123,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -86,7 +140,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -101,7 +156,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -116,7 +172,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="UserTaskInterestedEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

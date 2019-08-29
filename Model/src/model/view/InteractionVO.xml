@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="InteractionId"
     EntityUsage="InteractionEO"
-    AliasName="INTERACTION_ID">
+    AliasName="INTERACTION_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -122,7 +123,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="InteractionEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -138,7 +140,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="InteractionEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -154,7 +157,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="InteractionEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -169,7 +173,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="InteractionEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -184,7 +189,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="InteractionEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -224,6 +230,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="InteractionName"
+    PrecisionRule="true"
+    EntityAttrName="InteractionName"
+    EntityUsage="InteractionEO"
+    AliasName="INTERACTION_NAME"/>
   <ViewLinkAccessor
     Name="ContactInteractionEOView"
     ViewLink="model.view.ContactinvinteractionFkLink"

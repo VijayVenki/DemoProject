@@ -214,7 +214,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="CustomerAccountEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -230,7 +231,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="CustomerAccountEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -246,7 +248,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="CustomerAccountEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -261,7 +264,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="CustomerAccountEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -276,7 +280,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="CustomerAccountEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -341,7 +346,11 @@
     Name="AppointmentVO"
     ViewLink="model.entities.App_Acc"
     Type="oracle.jbo.server.ViewRowImpl"
-    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OpportunitiesVO"
+    ViewLink="model.entities.ACC_OPP"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

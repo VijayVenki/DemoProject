@@ -17,6 +17,10 @@
     Name="ContactsVO1"
     ViewObjectName="model.view.ContactsVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountVO1"
+    ViewObjectName="model.view.CustomerAccountVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PrimaryContact"
     ListVOName="ContactsVO1"
@@ -31,6 +35,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ContactName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Accountid"
+    ListVOName="CustomerAccountVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Accountid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -335,7 +357,54 @@
     EntityAttrName="Accountid"
     EntityUsage="OpportunitiesEO"
     AliasName="ACCOUNTID"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    LOVName="LOV_Accountid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="OpportunitiesVOCriteria"
+    ViewObjectName="model.view.OpportunitiesVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="OpportunitiesVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CreatedBy"
+        ViewAttribute="CreatedBy"
+        Operator="ISNOTBLANK"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="OppId"/>
+    <Item Value="Accountid"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="ContactsVO"
     ViewLink="model.view.ContactsOpportunitiesFkLink"
@@ -384,12 +453,14 @@
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerAccountVO"
+    ViewLink="model.entities.ACC_OPP"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <AttrArray Name="KeyAttributes">
-    <Item Value="OppId"/>
-    <Item Value="Accountid"/>
-  </AttrArray>
 </ViewObject>
