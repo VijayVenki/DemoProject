@@ -6,12 +6,14 @@
     <page path="/Create.jspx" usageId="view_CreatePageDef"/>
     <page path="/Edit.jspx" usageId="view_EditPageDef"/>
     <page path="/OppurtunityCreate.jspx" usageId="view_OppurtunityCreatePageDef"/>
+    <page path="/untitled1.jspx" usageId="view_untitled1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
     <page id="view_CreatePageDef" path="view.pageDefs.CreatePageDef"/>
     <page id="view_EditPageDef" path="view.pageDefs.EditPageDef"/>
     <page id="view_OppurtunityCreatePageDef" path="view.pageDefs.OppurtunityCreatePageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.entities"

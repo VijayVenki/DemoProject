@@ -211,25 +211,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="ObjectVersion"
-    Precision="4000"
-    ColumnName="OBJECT_VERSION"
-    SQLType="VARCHAR"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="VARCHAR2"
-    TableName="OPPORTUNITIES"
-    HistoryColumn="VersionHistory">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="4000"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="LastModifiedBy"
     Precision="100"
     ColumnName="LAST_MODIFIED_BY"
@@ -278,6 +259,18 @@
     TableName="OPPORTUNITIES">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersion"
+    Precision="4000"
+    ColumnName="OBJECT_VERSION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute
