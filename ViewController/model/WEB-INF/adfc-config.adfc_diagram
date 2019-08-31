@@ -3,107 +3,43 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View2">
+      id="View13">
       <property
-         name="activityId">Search</property>
+         name="activityId">LoginPage</property>
       <property
-         name="x">249.5</property>
+         name="x">76.0</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Search&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>LoginPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">209.36719</property>
-      <property
-         name="page">/Search.jspx</property>
+         name="y">506.8672</property>
       <property
          name="exceptionHandler">false</property>
    </View>
-   <View
-      id="View3">
+   <TaskFlowCall
+      id="TaskFlowCall14">
       <property
-         name="activityId">Create</property>
+         name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
       <property
-         name="x">457.5</property>
+         name="activityId">Home</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Create&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="x">376.5</property>
       <property
-         name="y">256.3672</property>
+         name="y">511.30078</property>
       <property
-         name="page">/Create.jspx</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase4"
-      from="View2"
-      to="View3">
-      <property
-         name="fromOutcome">create</property>
-      <property
-         name="sdm:polyPoints">R42,295.33157,202.30078,416.5,252.80078,L46</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase5"
-      from="View3"
-      to="View2">
-      <property
-         name="fromOutcome">back</property>
-      <property
-         name="sdm:polyPoints">L54,415.1068,259.80078,293.98102,209.30078,R50</property>
-   </ControlFlowCase>
-   <View
-      id="View6">
-      <property
-         name="activityId">Edit</property>
-      <property
-         name="x">252.5</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>Edit&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">354.3672</property>
-      <property
-         name="page">/Edit.jspx</property>
+         name="documentReference">/WEB-INF/Home.xml</property>
       <property
          name="exceptionHandler">false</property>
-   </View>
+      <property
+         name="taskFlowId">Home</property>
+   </TaskFlowCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase7"
-      from="View2"
-      to="View6">
+      id="ControlFlowCase15"
+      from="View13"
+      to="TaskFlowCall14">
       <property
-         name="fromOutcome">edit</property>
+         name="fromOutcome">login</property>
       <property
-         name="sdm:polyPoints">B44,246.0,263.5841,249.0,300.30078,T44</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase8"
-      from="View6"
-      to="View2">
-      <property
-         name="fromOutcome">submit</property>
-      <property
-         name="sdm:polyPoints">T56,256.0,300.0164,253.0,263.30078,B56</property>
-   </ControlFlowCase>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule9">
-      <property
-         name="activityId">*</property>
-      <property
-         name="x">345.0</property>
-      <property
-         name="y">502.8672</property>
-   </WildcardControlFlowRule>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase10"
-      from="WildcardControlFlowRule9"
-      to="View2">
-      <property
-         name="fromOutcome">caccount</property>
-      <property
-         name="sdm:polyPoints">T50,345.0,460.80078,290.5,216.30078,R58</property>
+         name="sdm:polyPoints">R50,117.0,506.80078,335.5,511.23438,L50</property>
    </ControlFlowCase>
 </SDM>

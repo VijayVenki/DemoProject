@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/Search.jspx" usageId="view_SearchPageDef"/>
     <page path="/Create.jspx" usageId="view_CreatePageDef"/>
     <page path="/Edit.jspx" usageId="view_EditPageDef"/>
     <page path="/OppurtunityCreate.jspx" usageId="view_OppurtunityCreatePageDef"/>
     <page path="/untitled1.jspx" usageId="view_untitled1PageDef"/>
+    <page path="/Searchaccount.jsf" usageId="view_SearchaccountPageDef"/>
+    <page path="/CreateAccount.jsf" usageId="view_CreateAccountPageDef"/>
+    <page path="/Searchaccount.jsff" usageId="view_SearchaccountPageDef1"/>
+    <page path="/Run.jsf" usageId="view_untitled2PageDef"/>
+    <page path="/CreateAccount.jsff" usageId="view_CreateAccountPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
@@ -14,6 +24,11 @@
     <page id="view_EditPageDef" path="view.pageDefs.EditPageDef"/>
     <page id="view_OppurtunityCreatePageDef" path="view.pageDefs.OppurtunityCreatePageDef"/>
     <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_SearchaccountPageDef" path="view.pageDefs.SearchaccountPageDef"/>
+    <page id="view_CreateAccountPageDef" path="view.pageDefs.CreateAccountPageDef"/>
+    <page id="view_SearchaccountPageDef1" path="view.pageDefs.SearchaccountPageDef1"/>
+    <page id="view_untitled2PageDef" path="view.pageDefs.untitled2PageDef"/>
+    <page id="view_CreateAccountPageDef1" path="view.pageDefs.CreateAccountPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.entities"

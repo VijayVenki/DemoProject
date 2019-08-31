@@ -13,6 +13,31 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccountNoteVO1"
+    ViewObjectName="model.view.AccountNoteVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountVO1"
+    ViewObjectName="model.view.CustomerAccountVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AccountId1"
+    ListVOName="CustomerAccountVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AccountId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="AccountNoteEO"
     Entity="model.entities.AccountNoteEO"/>
@@ -107,7 +132,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="AccountNoteEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -155,13 +181,16 @@
     PrecisionRule="true"
     EntityAttrName="AccountId1"
     EntityUsage="AccountNoteEO"
-    AliasName="ACCOUNT_ID1">
+    AliasName="ACCOUNT_ID1"
+    LOVName="LOV_AccountId1">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.AccountNoteVO.AccountId1_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

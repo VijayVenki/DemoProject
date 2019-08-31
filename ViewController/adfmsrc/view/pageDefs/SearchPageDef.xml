@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="CustomerAccountVO1" RangeSize="25" DataControl="AppModuleDataControl"
               id="CustomerAccountVO1Iterator"/>
-    <searchRegion Criteria="CustomerAccountVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+    <searchRegion Criteria="CustomerAccountSearch" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CustomerAccountVO1Iterator" id="CustomerAccountVOCriteriaQuery"/>
   </executables>
   <bindings>

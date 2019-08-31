@@ -17,18 +17,43 @@
     Name="ContactsVO1"
     ViewObjectName="model.view.ContactsVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountVO1"
+    ViewObjectName="model.view.CustomerAccountVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PrimaryContact"
     ListVOName="ContactsVO1"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="PrimaryContact"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContactName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ParentAccount"
+    ListVOName="CustomerAccountVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ParentAccount"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -135,13 +160,16 @@
     PrecisionRule="true"
     EntityAttrName="ParentAccount"
     EntityUsage="CustomerAccountEO"
-    AliasName="PARENT_ACCOUNT">
+    AliasName="PARENT_ACCOUNT"
+    LOVName="LOV_ParentAccount">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.CustomerAccountVO.ParentAccount_LABEL"/>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -202,9 +230,9 @@
         <LABEL
           ResId="model.view.CustomerAccountVO.PrimaryContact_LABEL"/>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="27"/>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -292,7 +320,7 @@
     </Properties>
   </ViewAttribute>
   <ViewCriteria
-    Name="CustomerAccountVOCriteria"
+    Name="CustomerAccountSearch"
     ViewObjectName="model.view.CustomerAccountVO"
     Conjunction="AND">
     <Properties Name="_Props">
@@ -318,9 +346,9 @@
       Name="CustomerAccountVOCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="CustomerAccountVOCriteria_CustomerAccountVOCriteria_row_0_AccountId"
-        ViewAttribute="AccountId"
-        Operator=">"
+        Name="AccountName"
+        ViewAttribute="AccountName"
+        Operator="ISNOTBLANK"
         Conjunction="AND"
         Value="100"
         Required="Optional"/>
@@ -352,8 +380,4 @@
     ViewLink="model.entities.ACC_OPP"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="model.ModelBundle"/>
-  </ResourceBundle>
 </ViewObject>

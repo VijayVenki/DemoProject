@@ -21,7 +21,14 @@
     IsUpdateable="while_insert"
     DefaultValue="@0"
     Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Note"
     IsQueriable="false"
@@ -129,12 +136,12 @@
   </Attribute>
   <Attribute
     Name="AccountId1"
-    IsNotNull="true"
     ColumnName="ACCOUNT_ID1"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ACCOUNT_NOTE"/>
+    TableName="ACCOUNT_NOTE"
+    IsNotNull="true"/>
   <AccessorAttribute
     Name="CustomerAccountEO"
     Association="model.entities.NotecusAccountFkAssoc"
@@ -142,6 +149,18 @@
     AssociationOtherEnd="model.entities.NotecusAccountFkAssoc.AccountNoteEO"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="AccountNoteAccountId1Check">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ACCOUNT_ID1" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACCOUNT_NOTE_ACCOUNT_ID1CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.AccountNoteEO.AccountId1"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="NotePk"
     PrimaryKey="true">
