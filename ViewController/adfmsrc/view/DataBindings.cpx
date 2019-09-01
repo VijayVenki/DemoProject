@@ -17,6 +17,11 @@
     <page path="/Searchaccount.jsff" usageId="view_SearchaccountPageDef1"/>
     <page path="/Run.jsf" usageId="view_untitled2PageDef"/>
     <page path="/CreateAccount.jsff" usageId="view_CreateAccountPageDef1"/>
+    <page path="/SearchAccountAppointment.jsff" usageId="view_SearchAccountAppointmentPageDef"/>
+    <page path="/EditAccount.jsff" usageId="view_EditAccountPageDef"/>
+    <page path="/ViewAccountAppointment.jsff" usageId="view_ViewAccountAppointmentPageDef"/>
+    <page path="/CreateAccountAppointment.jsff" usageId="view_CreateAccountAppointmentPageDef"/>
+    <page path="/searchcontactaccount.jsff" usageId="view_searchcontactaccountPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
@@ -29,6 +34,11 @@
     <page id="view_SearchaccountPageDef1" path="view.pageDefs.SearchaccountPageDef1"/>
     <page id="view_untitled2PageDef" path="view.pageDefs.untitled2PageDef"/>
     <page id="view_CreateAccountPageDef1" path="view.pageDefs.CreateAccountPageDef1"/>
+    <page id="view_SearchAccountAppointmentPageDef" path="view.pageDefs.SearchAccountAppointmentPageDef"/>
+    <page id="view_EditAccountPageDef" path="view.pageDefs.EditAccountPageDef"/>
+    <page id="view_ViewAccountAppointmentPageDef" path="view.pageDefs.ViewAccountAppointmentPageDef"/>
+    <page id="view_CreateAccountAppointmentPageDef" path="view.pageDefs.CreateAccountAppointmentPageDef"/>
+    <page id="view_searchcontactaccountPageDef" path="view.pageDefs.searchcontactaccountPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.entities"

@@ -114,7 +114,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="AppointmentEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -130,7 +131,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="AppointmentEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -146,7 +148,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="AppointmentEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -161,7 +164,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="AppointmentEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -176,7 +180,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="AppointmentEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -231,6 +236,41 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="AppointmentSearch"
+    ViewObjectName="model.view.AppointmentVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AppointmentVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AppName"
+        ViewAttribute="AppName"
+        Operator="ISNOTBLANK"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactInviteesVO"
     ViewLink="model.view.Inviteesv1AccAppointmentFkLink"
@@ -247,13 +287,18 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="CustomerAccountVO"
-    ViewLink="model.entities.App_Acc"
+    Name="OpportunitiesVO"
+    ViewLink="model.entities.APP_Opp"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="OpportunitiesVO"
-    ViewLink="model.entities.APP_Opp"
+    Name="AppointmentVO"
+    ViewLink="model.entities.App_Acc"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerAccountVO1"
+    ViewLink="model.entities.APP_ACC1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

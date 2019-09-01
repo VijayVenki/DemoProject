@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactsEO"
-    AliasName="CONTACT_ID">
+    AliasName="CONTACT_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -234,7 +235,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="ContactsEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -250,7 +252,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="ContactsEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -266,7 +269,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="ContactsEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -281,7 +285,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="ContactsEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -296,7 +301,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="ContactsEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -306,6 +312,41 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="Contacts"
+    ViewObjectName="model.view.ContactsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ContactsVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ContactName"
+        ViewAttribute="ContactName"
+        Operator="ISNOTBLANK"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactInteractionEOView"
     ViewLink="model.view.ContinvcontactsFkv2Link"

@@ -374,10 +374,26 @@
     Name="AppointmentVO"
     ViewLink="model.entities.App_Acc"
     Type="oracle.jbo.server.ViewRowImpl"
-    IsUpdateable="false"/>
+    IsUpdateable="false"
+    Reversed="true"/>
   <ViewLinkAccessor
     Name="OpportunitiesVO"
     ViewLink="model.entities.ACC_OPP"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentVO1"
+    ViewLink="model.entities.APP_ACC1"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerAccountVO"
+    ViewLink="model.entities.App_Acc"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
