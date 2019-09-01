@@ -27,6 +27,9 @@
     <page path="/searchtaskacc.jsff" usageId="view_searchtaskaccPageDef"/>
     <page path="/createtaskacc.jsff" usageId="view_createtaskaccPageDef"/>
     <page path="/edittaskacc.jsff" usageId="view_edittaskaccPageDef"/>
+    <page path="/ViewAccOpp.jsff" usageId="view_ViewAccOppPageDef"/>
+    <page path="/CreateAccOpp.jsff" usageId="view_CreateAccOppPageDef"/>
+    <page path="/EditAccOpp.jsff" usageId="view_EditAccOppPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
@@ -49,6 +52,9 @@
     <page id="view_searchtaskaccPageDef" path="view.pageDefs.searchtaskaccPageDef"/>
     <page id="view_createtaskaccPageDef" path="view.pageDefs.createtaskaccPageDef"/>
     <page id="view_edittaskaccPageDef" path="view.pageDefs.edittaskaccPageDef"/>
+    <page id="view_ViewAccOppPageDef" path="view.pageDefs.ViewAccOppPageDef"/>
+    <page id="view_CreateAccOppPageDef" path="view.pageDefs.CreateAccOppPageDef"/>
+    <page id="view_EditAccOppPageDef" path="view.pageDefs.EditAccOppPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.entities"

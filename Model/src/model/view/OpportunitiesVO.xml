@@ -367,7 +367,7 @@
     </Properties>
   </ViewAttribute>
   <ViewCriteria
-    Name="OpportunitiesVOCriteria"
+    Name="Opportunities"
     ViewObjectName="model.view.OpportunitiesVO"
     Conjunction="AND">
     <Properties Name="_Props">
@@ -397,7 +397,6 @@
         ViewAttribute="CreatedBy"
         Operator="ISNOTBLANK"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
@@ -457,7 +456,11 @@
     Name="CustomerAccountVO"
     ViewLink="model.entities.ACC_OPP"
     Type="oracle.jbo.server.ViewRowImpl"
-    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerAccountVO2"
+    ViewLink="model.entities.ACC_OPP1"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

@@ -155,11 +155,11 @@
     Name="ContactOppurtunityVO1"
     ViewObjectName="model.view.ContactOppurtunityVO"/>
   <ViewUsage
-    Name="OpportunitiesVO6"
-    ViewObjectName="model.view.OpportunitiesVO"/>
-  <ViewUsage
     Name="AppointmentVO3"
     ViewObjectName="model.view.AppointmentVO"/>
+  <ViewUsage
+    Name="OpportunitiesVO6"
+    ViewObjectName="model.view.OpportunitiesVO"/>
   <ViewLinkUsage
     Name="ContactsCustomerAccountFkLink1"
     ViewLinkObjectName="model.view.ContactsCustomerAccountFkLink"
@@ -371,15 +371,15 @@
     DstViewUsageName="model.entities.AppModule.OpportunitiesVO5"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="ACC_OPP1"
-    ViewLinkObjectName="model.entities.ACC_OPP"
-    SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
-    DstViewUsageName="model.entities.AppModule.OpportunitiesVO6"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="APP_ACC1_1"
     ViewLinkObjectName="model.entities.APP_ACC1"
     SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
     DstViewUsageName="model.entities.AppModule.AppointmentVO3"
+    Reversed="true"/>
+  <ViewLinkUsage
+    Name="ACC_OPP1_1"
+    ViewLinkObjectName="model.entities.ACC_OPP1"
+    SrcViewUsageName="model.entities.AppModule.CustomerAccountVO1"
+    DstViewUsageName="model.entities.AppModule.OpportunitiesVO6"
     Reversed="true"/>
 </AppModule>
