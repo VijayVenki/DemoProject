@@ -26,11 +26,7 @@
       <property
          name="y">511.30078</property>
       <property
-         name="documentReference">/WEB-INF/Home.xml</property>
-      <property
          name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">Home</property>
    </TaskFlowCall>
    <ControlFlowCase
       islink="true"

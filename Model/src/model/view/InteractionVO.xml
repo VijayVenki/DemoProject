@@ -236,6 +236,30 @@
     EntityAttrName="InteractionName"
     EntityUsage="InteractionEO"
     AliasName="INTERACTION_NAME"/>
+  <ViewCriteria
+    Name="InteractionVOCriteria"
+    ViewObjectName="model.view.InteractionVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactInteractionEOView"
     ViewLink="model.view.ContactinvinteractionFkLink"

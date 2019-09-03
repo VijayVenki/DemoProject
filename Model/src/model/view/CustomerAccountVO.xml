@@ -24,9 +24,9 @@
   <ListBinding
     Name="LOV_PrimaryContact"
     ListVOName="ContactsVO1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    ComboRowCountHint="10">
     <AttrArray Name="AttrNames">
       <Item Value="PrimaryContact"/>
     </AttrArray>
@@ -232,7 +232,7 @@
         <DISPLAYWIDTH
           Value="27"/>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -327,7 +327,7 @@
       <CustomProperties>
         <Property
           Name="autoExecute"
-          Value="false"/>
+          Value="true"/>
         <Property
           Name="mode"
           Value="Basic"/>
@@ -385,8 +385,7 @@
     Name="CustomerAccountVO"
     ViewLink="model.entities.App_Acc"
     Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"
-    Reversed="true"/>
+    IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="OpportunitiesVO1"
     ViewLink="model.entities.ACC_OPP1"

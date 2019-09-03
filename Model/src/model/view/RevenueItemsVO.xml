@@ -43,7 +43,8 @@
     PrecisionRule="true"
     EntityAttrName="RevenueId"
     EntityUsage="RevenueItemsEO"
-    AliasName="REVENUE_ID">
+    AliasName="REVENUE_ID"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -180,7 +181,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="RevenueItemsEO"
-    AliasName="CREATED_BY">
+    AliasName="CREATED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -196,7 +198,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="RevenueItemsEO"
-    AliasName="CREATED_DATE">
+    AliasName="CREATED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -212,7 +215,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="RevenueItemsEO"
-    AliasName="MODIFIED_DATE">
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -227,7 +231,8 @@
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="RevenueItemsEO"
-    AliasName="OBJECT_VERSION">
+    AliasName="OBJECT_VERSION"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -256,7 +261,8 @@
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="RevenueItemsEO"
-    AliasName="LAST_MODIFIED_BY">
+    AliasName="LAST_MODIFIED_BY"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -264,6 +270,30 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="RevenueItemsVOCriteria"
+    ViewObjectName="model.view.RevenueItemsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

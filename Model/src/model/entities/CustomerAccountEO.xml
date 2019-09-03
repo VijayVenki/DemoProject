@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CUSTOMER_ACCOUNT"
   AliasName="CustomerAccountEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="AccountId"
     ColumnName="ACCOUNT_ID"
@@ -93,6 +94,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="AccountUrlRule0"
+      ResId="model.entities.CustomerAccountEO.AccountUrl_Rule_0"
+      OnAttribute="AccountUrl"
+      Pattern='^(ftp|http|https):\/\/[^ "]+$'
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="ParentAccount"
@@ -119,7 +126,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CUSTOMER_ACCOUNT"/>
+    TableName="CUSTOMER_ACCOUNT">
+    <validation:RangeValidationBean
+      Name="NoOfEmployeesRule0"
+      OnAttribute="NoOfEmployees"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1"
+      MaxValue="100000"
+      ResId="model.entities.CustomerAccountEO.NoOfEmployees_Rule_0"/>
+  </Attribute>
   <Attribute
     Name="Email"
     Precision="4000"
@@ -131,6 +147,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailValidation"
+      ResId="model.entities.CustomerAccountEO.Email_Rule_0"
+      OnAttribute="Email"
+      Pattern="(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|&quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="PrimaryContact"
@@ -257,4 +279,8 @@
       <Item Value="model.entities.CustomerAccountEO.AccountId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

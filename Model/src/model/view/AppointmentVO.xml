@@ -244,7 +244,7 @@
       <CustomProperties>
         <Property
           Name="autoExecute"
-          Value="false"/>
+          Value="true"/>
         <Property
           Name="mode"
           Value="Basic"/>
@@ -267,7 +267,6 @@
         ViewAttribute="AppName"
         Operator="ISNOTBLANK"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
