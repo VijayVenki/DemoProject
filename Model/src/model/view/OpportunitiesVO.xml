@@ -389,16 +389,6 @@
           Value="InAdvancedMode"/>
       </CustomProperties>
     </Properties>
-    <ViewCriteriaRow
-      Name="OpportunitiesVOCriteria_row_0"
-      UpperColumns="1">
-      <ViewCriteriaItem
-        Name="CreatedBy"
-        ViewAttribute="CreatedBy"
-        Operator="ISNOTBLANK"
-        Conjunction="AND"
-        Required="Optional"/>
-    </ViewCriteriaRow>
   </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="OppId"/>
